@@ -1,5 +1,5 @@
 import axios from "axios";
-let { useState ,useEffect} = require("react");
+import { useState ,useEffect} from "react";
 
 // import { positions } from "../data/data";
 
@@ -7,7 +7,7 @@ const Positions = () => {
   let [allpositions, setAllPositions] = useState([]);
   
   useEffect(()=>{
-    axios.get("http://localhost:3002/allpositions").then((res)=>{
+    axios.get("https://zerodha-backend-m1m0.onrender.com/allpositions").then((res)=>{
       console.log(res.data);
       setAllPositions(res.data);
     });
